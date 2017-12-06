@@ -1,0 +1,16 @@
+<style>
+html {{ background-color: #212121; margin: 0px; color: #FFF; }}
+body {{ margin: 8px; padding: 0; }}
+a {{  text-decoration: none; color: #FFF;  margin: 4px; font-weight: bold;  font-size: 14px; }}
+a.download {{ color: #00E676; }}
+a.memory {{ color: #FF9800; }}
+b.title {{ font-size: 18px; }}
+small {{ color: #ddd  }}
+</style>
+<b class="title">{file}</b>
+<br />
+<small>{url}</small>
+<br />
+<a class="download" href="download://{url}"><b>[download]</b></a>
+<a class="memory" href="memory://{url}">[open]</a>
+<a href="browser://{url}">[browser]</a>
