@@ -3,8 +3,8 @@ import sublime_plugin
 import webbrowser as web
 import _thread
 
-from .lib.constant import *
-from .lib.util import *
+from .constant import *
+from .util import *
 
 
 class InsertDownloadTextCommand(sublime_plugin.TextCommand):
