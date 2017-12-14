@@ -9,7 +9,7 @@ def identify(v, point):
 	regions = list(filter(lambda r: r.contains(point), v.find_all(URL)))
 	if regions:
 		region = regions[0]
-		url = v.substr(region)
+		url = v.substr(region)[1:-1]
 		return [url, url.split('/')[-1], region]
 	return [None]*3
 
@@ -24,6 +24,7 @@ def obtain_info(v, point):
 
 
 def gutter_update(tag, view, regions):
+		regions = [ sublime.Region(region.a + 1, region.b - 1) for region in regions ]
 		flags = sublime.HIDE_ON_MINIMAP | sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE | sublime.DRAW_EMPTY | sublime.DRAW_SOLID_UNDERLINE
 		view.add_regions(tag, regions, tag, ICON % tag, flags)
 
